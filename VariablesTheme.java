@@ -70,8 +70,8 @@ public class VariablesTheme {
         num1 = temp;
         System.out.println("num1 = " + num1 + " num2 = " + num2);
 
-        System.out.print("\n5.2 Перестановка значений переменных ");
-                System.out.println("с помощью арифметических операций");
+        System.out.println(("\n5.2 Перестановка значений переменных ") + 
+                ("с помощью арифметических операций"));
         System.out.println("num1 = " + num1 + " num2 = " + num2);
         num1 += num2;
         num2 = num1 - num2;
