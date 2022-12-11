@@ -81,7 +81,7 @@ public class VariablesTheme {
         System.out.println("\n5.3 Перестановка значений переменных с помощью побитовой операции ^");
         System.out.println("num1 = " + num1 + " num2 = " + num2);
         num1 ^= num2;
-        num2 = num2 ^ num1;
+        num2 ^= num1;
         num1 ^= num2;
         System.out.println("num1 = " + num1 + " num2 = " + num2);
 
@@ -96,11 +96,11 @@ public class VariablesTheme {
         int convertCaret = caret;
         char underscore = '_';
         int convertUnderscore = underscore;
-        System.out.println("код символа " + convertNumber + " символ #");
-        System.out.println("код символа " + convertAmpersand + " символ &");
-        System.out.println("код символа " + convertDog + " символ @");
-        System.out.println("код символа " + convertCaret + " символ ^");
-        System.out.println("код символа " + convertUnderscore + " символ _");
+        System.out.println("код символа " + (int) number + " символ #");
+        System.out.println("код символа " + (int) ampersand + " символ &");
+        System.out.println("код символа " + (int) dog + " символ @");
+        System.out.println("код символа " + (int) caret + " символ ^");
+        System.out.println("код символа " + (int) underscore + " символ _");
 
         System.out.println("\n7. Вывод количества сотен, десятков и единиц числа");
         int srcNum = 123;
@@ -124,7 +124,7 @@ public class VariablesTheme {
         System.out.println(" " + slash + "      " + backSlash);
         System.out.println((slash + "" + underscore + "" + underscore + "" + underscore) + 
                 (("" + underscore + slash + backSlash + "" + underscore) + 
-                          ("" + underscore + backSlash)));
+                ("" + underscore + backSlash)));
 
         System.out.println("\n9. Вывод произведения и суммы цифр числа");
         srcNum = 345;
