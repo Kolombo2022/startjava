@@ -9,9 +9,8 @@ public class IfElseStatementTheme {
             System.out.println("Наслаждайтесь детством");
         }
 
-        boolean man = true;
-        boolean woman = false;
-        if(!man) {
+        boolean maleGender = true;
+        if(!maleGender) {
             System.out.println("\nЭто женщина");
         } else {
             System.out.println("\nЭто мужчина");
@@ -34,49 +33,56 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n2 задача. Поиск max и min числа");
-        int num10 = 400;
-        int num20 = 420;
-        if(num10 < num20) {
-            System.out.println("Число " + num10 + " минимальное, а число " + num20 + " максимальное");
-        } else if(num10 > num20) {
-            System.out.println("Число " + num10 + " максимальное, а число " + num20 + " минимальное");
+        int num1 = 400;
+        int num2 = 420;
+        if(num1 < num2) {
+            System.out.println("Число " + num1 + " минимальное, а число " + num2 + " максимальное");
+        } else if(num1 > num2) {
+            System.out.println("Число " + num1 + " максимальное, а число " + num2 + " минимальное");
         } else
-            System.out.println("Число " + num10 + " = числу " + num20);
+            System.out.println("Число " + num1 + " = числу " + num2);
 
         System.out.println("\n3 задача. Проверка числа");
-        int anyNumber = 8;
-        if(anyNumber == 0) 
-        System.out.println("Число " + anyNumber + " является нулём");
-        else if (anyNumber > 0 & anyNumber % 2 == 0) 
-            System.out.println("Число " + anyNumber + " положительное, чётное");
-        else if (anyNumber > 0 & anyNumber % 2 <= 1) 
-            System.out.println("Число " + anyNumber + " положительное, нечётное");
-        else if (anyNumber < 0 & anyNumber % 2 == 0)
-            System.out.println("Число " + anyNumber + " отрицательное, чётное");
-        else if (anyNumber < 0 & anyNumber % 2 <= 1)
-            System.out.println("Число " + anyNumber + " отрицательное, нечётное");
+        int anyNumber = 10;
+        if(anyNumber != 0) {
+            if (anyNumber > 0 & anyNumber % 2 == 0) 
+            System.out.println(anyNumber + " положительное, чётное");
+            else if (anyNumber > 0 & anyNumber % 2 <= 1) 
+            System.out.println(anyNumber + " положительное, нечётное");
+            else if (anyNumber < 0 & anyNumber % 2 == 0)
+            System.out.println(anyNumber + " отрицательное, чётное");
+            else if (anyNumber < 0 & anyNumber % 2 <= 1)
+            System.out.println(anyNumber + " отрицательное, нечётное");
+        }
+        
 
         System.out.println("\n4 задача. Поиск одинаковых цифр в числах");
-        int num1 = 456;
-        int num2 = 156;
-        if ((num1 / 100 == num2 / 100 ) || 
-                (num1 / 10 % 10 == num2 / 10 % 10) || 
-                (num1 % 10 == num2 % 10)) {
+        int hundreds = num1 / 100;
+        int tens = num1 / 10 % 10;
+        int units = num1 % 10;
+        if ((hundreds == num2 / 100 ) || 
+                (tens == num2 / 10 % 10) || 
+                (units == num2 % 10)) {
             System.out.println("Исходные числа " + num1 +" , " + num2);
-        if(num1 / 100 == num2 / 100) 
-            System.out.println("Одинаковые сотни " + num1 / 100);
-        if(num1 / 10 % 10 == num2 / 10 % 10) 
-            System.out.println("Одинаковые десятки " + num1 / 10 % 10);
-        if(num1 % 10 == num2 % 10) 
-            System.out.println("Одинаковые единицы " + num1 % 10);
-        }
-        else 
+        if(hundreds == num2 / 100) 
+            System.out.println("Одинаковые сотни " + hundreds);
+        if(tens == num2 / 10 % 10) 
+            System.out.println("Одинаковые десятки " + tens);
+        if(units == num2 % 10) 
+            System.out.println("Одинаковые единицы " + units);
+        } else 
             System.out.println("В разрядах нет одинаковых цифр");
 
         System.out.println("\n5 задача. Определение символа по его коду");
+        int up = 92;
+        int u = 117;
+        int zero = 48;
+        int five = 53;
+        int seven = 55;
         char a = '\u0057';
-        System.out.println(a + " ASCII символ");
-        System.out.println((int)a + "Число в десятичной системе исчисления");
+        System.out.println(a + " это ASCII символ");
+        System.out.println((((char)up) + "" + ((char)u) + "" + ((char)zero) + "") + 
+                (((char)zero) + "" + ((char)five) + "" + ((char)seven)));
 
         System.out.println("\n6 задача. Подсчёт суммы вклада и начисленных банком %");
         int depositAmount = 300_000;
@@ -95,6 +101,7 @@ public class IfElseStatementTheme {
             System.out.println("Начисленно 10 процентов");
             System.out.println("Итоговая сумма с процентами " + depositInterest + " руб.");
         }
+        /*System.out.println(depositInterest);*/
 
         System.out.println("\n7 задача. Определение оценки по предметам");
         int markHistoryPercent = 59;
@@ -103,21 +110,22 @@ public class IfElseStatementTheme {
         int finalHistoryPercent;
         if(markHistoryPercent > 91) {
             finalHistoryPercent = 5;
-            System.out.println(("История " + markHistoryPercent) + 
+            System.out.println((markHistoryPercent) + 
             ("% соответствует оценке " + finalHistoryPercent));
         } else if(markHistoryPercent > 73) {
             finalHistoryPercent = 4;
-            System.out.println(("История " + markHistoryPercent) + 
+            System.out.println((markHistoryPercent) + 
             ("% соответствует оценке " + finalHistoryPercent));
         } else if(markHistoryPercent > 60) {
             finalHistoryPercent = 3;
-            System.out.println(("История " + markHistoryPercent) + 
+            System.out.println((markHistoryPercent) + 
             ("% соответствует оценке " + finalHistoryPercent));
         } else if(markHistoryPercent <= 60) {
             finalHistoryPercent = 2;
-            System.out.println(("История " + markHistoryPercent) + 
+            System.out.println((markHistoryPercent) + 
             ("% соответствует оценке " + finalHistoryPercent));
         } 
+        /*System.out.println(finalHistoryPercent);*/
         if (markProgrammingPercent > 91) {
             finalProgrammingPercent = 5;
             System.out.println(("Программирование " + markProgrammingPercent) + 
