@@ -3,21 +3,21 @@ public class IfElseStatementTheme {
     public static void main (String[] args) {
         System.out.println("1 задача. Перевод псевдокода на язык Java ");
         byte age = 30;
-        if(age > 20) {
+        if (age > 20) {
             System.out.println("Взрослейте и находите себя в жизни");
         } else {
             System.out.println("Наслаждайтесь детством");
         }
 
         boolean maleGender = true;
-        if(!maleGender) {
+        if (!maleGender) {
             System.out.println("\nЭто женщина");
         } else {
             System.out.println("\nЭто мужчина");
         }
 
         double height = 1.70;
-        if(height < 1.80) {
+        if (height < 1.80) {
             System.out.println("\nПробовать виды спорта, кроме баскетбола");
         } else {
             System.out.println("\nМожно пробовать карьеру баскетболиста");
@@ -35,7 +35,7 @@ public class IfElseStatementTheme {
         System.out.println("\n2 задача. Поиск max и min числа");
         int num1 = 400;
         int num2 = 420;
-        if(num1 < num2) {
+        if (num1 < num2) {
             System.out.println("Число " + num1 + " минимальное, а число " + num2 + " максимальное");
         } else if(num1 > num2) {
             System.out.println("Число " + num1 + " максимальное, а число " + num2 + " минимальное");
@@ -43,135 +43,148 @@ public class IfElseStatementTheme {
             System.out.println("Число " + num1 + " = числу " + num2);
 
         System.out.println("\n3 задача. Проверка числа");
-        int anyNumber = 10;
-        if(anyNumber != 0) {
-            if (anyNumber > 0 & anyNumber % 2 == 0) 
-            System.out.println(anyNumber + " положительное, чётное");
-            else if (anyNumber > 0 & anyNumber % 2 <= 1) 
-            System.out.println(anyNumber + " положительное, нечётное");
-            else if (anyNumber < 0 & anyNumber % 2 == 0)
-            System.out.println(anyNumber + " отрицательное, чётное");
-            else if (anyNumber < 0 & anyNumber % 2 <= 1)
-            System.out.println(anyNumber + " отрицательное, нечётное");
+        int anyNumber = 11;
+        System.out.println("Исходное число " + anyNumber);
+        if (anyNumber != 0) {
+            System.out.println("Число " + anyNumber + " не является нулём");
+        if (anyNumber > 0) {
+            System.out.println("Число " + anyNumber + " положительное");
+        } else {
+            System.out.println("Число " + anyNumber + " отрицательное");
         }
-        
+        if (anyNumber % 2 == 0) {
+            System.out.println("Число " + anyNumber + " чётное");
+        } else {
+            System.out.println("Число " + anyNumber + " нечётное");
+        }
+        }
 
         System.out.println("\n4 задача. Поиск одинаковых цифр в числах");
-        int hundreds = num1 / 100;
-        int tens = num1 / 10 % 10;
-        int units = num1 % 10;
-        if ((hundreds == num2 / 100 ) || 
-                (tens == num2 / 10 % 10) || 
-                (units == num2 % 10)) {
-            System.out.println("Исходные числа " + num1 +" , " + num2);
-        if(hundreds == num2 / 100) 
+        int num3 = 400;
+        int num4 = 425;
+        int hundreds = num3 / 100;
+        int tens = num3 / 10 % 10;
+        int ones = num3 % 10;
+            System.out.println("Исходные числа " + num3 +" , " + num4);
+        if (hundreds == num4 / 100) {
             System.out.println("Одинаковые сотни " + hundreds);
-        if(tens == num2 / 10 % 10) 
+        if (tens == num4 / 10 % 10) 
             System.out.println("Одинаковые десятки " + tens);
-        if(units == num2 % 10) 
-            System.out.println("Одинаковые единицы " + units);
+        if (ones == num4 % 10) 
+            System.out.println("Одинаковые единицы " + ones);
         } else 
             System.out.println("В разрядах нет одинаковых цифр");
 
         System.out.println("\n5 задача. Определение символа по его коду");
-        int up = 92;
-        int u = 117;
-        int zero = 48;
-        int five = 53;
-        int seven = 55;
-        char a = '\u0057';
-        System.out.println(a + " это ASCII символ");
-        System.out.println((((char)up) + "" + ((char)u) + "" + ((char)zero) + "") + 
-                (((char)zero) + "" + ((char)five) + "" + ((char)seven)));
+        char code = '\u005A';
+        if (code >= 'a' && code <= 'z') {
+            System.out.println("Код является маленькой буквой " + code);
+        } else if (code >= 'A' && code <= 'Z') {
+            System.out.println("Код является заглавной буквой " + code);
+        } else if (code >= '0' && code <= '9') {
+            System.out.println("Код является числом " + code);
+        } else
+            System.out.println("Код является не буквой, не числом " + code);
 
         System.out.println("\n6 задача. Подсчёт суммы вклада и начисленных банком %");
         int depositAmount = 300_000;
         double depositInterest;
         System.out.println("Сумма вклада " + depositAmount + " руб.");
-        if(depositAmount < 100_000) {
+        if (depositAmount < 100_000) {
             depositInterest = depositAmount * 1.05;
             System.out.println("Начисленно 5 процентов");
             System.out.println("Итоговая сумма с процентами " + depositInterest + " руб.");
-        } else if(depositAmount >= 100_000 && depositAmount <= 300_000) {
+        } else if (depositAmount >= 100_000 && depositAmount <= 300_000) {
             depositInterest = depositAmount * 1.07;
             System.out.println("Начисленно 7 процентов");
             System.out.println("Итоговая сумма с процентами " + depositInterest + " руб.");
-        } else if(depositAmount > 300_000) {
+        } else if (depositAmount > 300_000) {
             depositInterest = depositAmount * 1.1;
             System.out.println("Начисленно 10 процентов");
             System.out.println("Итоговая сумма с процентами " + depositInterest + " руб.");
         }
-        /*System.out.println(depositInterest);*/
 
         System.out.println("\n7 задача. Определение оценки по предметам");
         int markHistoryPercent = 59;
         int markProgrammingPercent = 91;
-        int finalProgrammingPercent;
         int finalHistoryPercent;
-        if(markHistoryPercent > 91) {
+        int finalProgrammingPercent;
+        if (markHistoryPercent > 91) {
             finalHistoryPercent = 5;
-            System.out.println((markHistoryPercent) + 
-            ("% соответствует оценке " + finalHistoryPercent));
-        } else if(markHistoryPercent > 73) {
+        } else {
+        if (markHistoryPercent > 73) {
             finalHistoryPercent = 4;
-            System.out.println((markHistoryPercent) + 
-            ("% соответствует оценке " + finalHistoryPercent));
-        } else if(markHistoryPercent > 60) {
+        } else {
+        if (markHistoryPercent > 60) {
             finalHistoryPercent = 3;
-            System.out.println((markHistoryPercent) + 
-            ("% соответствует оценке " + finalHistoryPercent));
-        } else if(markHistoryPercent <= 60) {
+        } else {
             finalHistoryPercent = 2;
-            System.out.println((markHistoryPercent) + 
-            ("% соответствует оценке " + finalHistoryPercent));
-        } 
-        /*System.out.println(finalHistoryPercent);*/
+        }
+        }
+        }
+            System.out.println("История оценка " + finalHistoryPercent);
         if (markProgrammingPercent > 91) {
             finalProgrammingPercent = 5;
-            System.out.println(("Программирование " + markProgrammingPercent) + 
-            ("% соответствует оценке " + finalProgrammingPercent));
-        } else if(markProgrammingPercent > 73) {
+        } else {
+        if (markProgrammingPercent > 73) {
             finalProgrammingPercent = 4;
-            System.out.println(("Программирование " + markProgrammingPercent) + 
-            ("% соответствует оценке " + finalProgrammingPercent));
-        } else if(markProgrammingPercent > 60) {
+        } else {
+        if (markProgrammingPercent > 60) {
             finalProgrammingPercent = 3;
-            System.out.println(("Программирование " + markProgrammingPercent) + 
-            ("% соответствует оценке " + finalProgrammingPercent));
-        } else if(markProgrammingPercent <= 60) {
+        } else {
             finalProgrammingPercent = 2;
-            System.out.println(("Программирование " + markProgrammingPercent) + 
-            ("% соответствует оценке " + finalProgrammingPercent));
         }
+        }
+        }
+            System.out.println("Программирование оценка " + finalProgrammingPercent);
+            System.out.println(("Средний балл оценок по предметам ") + 
+                    ((finalHistoryPercent + finalProgrammingPercent) / 2));
+            System.out.println(("Средний процент по предметам ") +
+                    (((markHistoryPercent + markProgrammingPercent) / 2)));
 
         System.out.println("\n8 задача. Расчет прибыли за год");
         int rentPremises = 5000;
         int saleGoods = 13000;
         int costGoods = 9000;
-        int annualProfit = saleGoods - rentPremises - costGoods ;
+        int annualProfit = (saleGoods - rentPremises - costGoods) * 12;
         if(annualProfit < 0) {
             System.out.println("прибыль за год: " + annualProfit + " руб.");
         } else if(annualProfit > 0) {
             System.out.println("прибыль за год: +" + annualProfit + " руб.");
         }
 
-            System.out.println("\n9 задача. Подсчёт количества банкнот");
-        int totalWithdraw = 567;
-        int nominal100 = totalWithdraw / 100;
-        int nominal10 = totalWithdraw / 10 % 10;
-        int nominal1 = totalWithdraw % 10;
+        System.out.println("\n9 задача. Подсчёт количества банкнот");
         int remains100 = 10;
         int remains10 = 5;
         int remains1 = 50;
-        int remains11 = nominal10 - remains10;
-        if(totalWithdraw >= 100) {
-            System.out.println("Количество 100ых банкнот " + nominal100 + " шт.");
-        if(nominal10 > remains10)
-            System.out.println("Количество 10ых банкнот " + remains10 + " шт.");
-        else 
-            System.out.println("Количество 10ых банкнот " + nominal10 + " шт.");
+        int totalWithdraw = 225;
+        int haveSum = remains100 * 100 + remains10 * 10 + remains1 * 1;
+        if (haveSum > totalWithdraw && totalWithdraw > 0) {
+        if (remains100 >= totalWithdraw / 100 && totalWithdraw >= 100) {
+        int sum100 = totalWithdraw / 100;
+            System.out.println(sum100 + " банкноты номиналом 100");
+        if (totalWithdraw - sum100 != 0) {
+        int sum10 = (totalWithdraw - sum100 * 100) / 10;
+            System.out.println(sum10 + " банкноты номиналом 10");
         }
-            System.out.println(("Количество 1ых банкнот "  + (((nominal10 - remains10)) * 
-            ((10)) + nominal1) + " шт."));
+        if (totalWithdraw - sum100 * 100 - (totalWithdraw - sum100 * 100) / 10 != 0) {
+        int sum1 = (totalWithdraw - sum100 * 100) % 10;
+            System.out.println(sum1 + " банкноты номиналом 1");
+        }
+        } else {
+        if (remains10 >= totalWithdraw / 10 && totalWithdraw >= 10) {
+        int sum10 = totalWithdraw / 10;
+            System.out.println(sum10 + " банкноты номиналом 10");
+        if (totalWithdraw - sum10 != 0) {
+        int sum1 = totalWithdraw % 10;
+            System.out.println(sum1);
+        }
+        } else {
+        int sum1 = totalWithdraw;
         }
         }
+        } else {
+            System.out.println("Текущая сумма доступна");
+        }
+    }
+}
