@@ -44,18 +44,18 @@ public class IfElseStatementTheme {
 
         System.out.println("\n3 задача. Проверка числа");
         int anyNumber = 11;
-            System.out.println("Исходное число " + anyNumber);
+        System.out.println("Исходное число " + anyNumber);
         if (anyNumber != 0) {
-        if (anyNumber > 0) {
-            System.out.println("положительное");
-        } else {
-            System.out.println("отрицательное");
-        }
-        if (anyNumber % 2 == 0) {
-            System.out.println("чётное");
-        } else {
-            System.out.println("нечётное");
-        }
+            if (anyNumber > 0) {
+                System.out.println("положительное");
+            } else {
+                System.out.println("отрицательное");
+            }
+            if (anyNumber % 2 == 0) {
+                System.out.println("чётное");
+            } else {
+                System.out.println("нечётное");
+            }
         }
 
         System.out.println("\n4 задача. Поиск одинаковых цифр в числах");
@@ -88,48 +88,43 @@ public class IfElseStatementTheme {
         System.out.println("\n6 задача. Подсчёт суммы вклада и начисленных банком %");
         int depositAmount = 300_000;
         double depositInterest;
-            System.out.println("Сумма вклада " + depositAmount + " руб.");
         if (depositAmount < 100_000) {
-        depositInterest = depositAmount * 1.05;
-            System.out.println("Начисленный процент = 5 процентов");
-            System.out.println("Итоговая сумма с процентами " + depositInterest + " руб.");
+            depositInterest = depositAmount * 1.05;
         } else if (depositAmount >= 100_000 && depositAmount <= 300_000) {
-        depositInterest = depositAmount * 1.07;
-            System.out.println("Начисленный процент = 7 процентов");
+            depositInterest = depositAmount * 1.07;
         } else {
-        depositInterest = depositAmount * 1.1;
-            System.out.println("Начисленный процент = 10 процентов");
+            depositInterest = depositAmount * 1.1;
         }
-            System.out.println("Итоговая сумма с процентами " + depositInterest + " руб.");
+        System.out.println("Сумма вклада " + depositAmount + " руб.");
+        System.out.println("Начисленный процент " + (depositInterest / depositAmount * 100 - 100) + " %");
+        System.out.println("Итоговая сумма с процентами " + depositInterest + " руб.");
 
         System.out.println("\n7 задача. Определение оценки по предметам");
-        int markHistoryPercent = 59;
-        int markProgrammingPercent = 91;
-        int finalHistoryPercent;
-        int finalProgrammingPercent;
+        int markHistoryPercent = 91;
+        int markProgrammingPercent = 44;
+        int gradeHistory = 4;
+        int gradeProgramming = 4;
         if (markHistoryPercent > 91) {
-            finalHistoryPercent = 5;
+            gradeHistory = 5;
         } else if (markHistoryPercent > 73) {
-            finalHistoryPercent = 4;
         } else if (markHistoryPercent > 60) {
-            finalHistoryPercent = 3;
+            gradeHistory = 3;
         } else {
-            finalHistoryPercent = 2;
+            gradeHistory = 2;
         }
-            System.out.println("История оценка " + finalHistoryPercent);
         if (markProgrammingPercent > 91) {
-            finalProgrammingPercent = 5;
+            gradeProgramming = 5;
         } else if (markProgrammingPercent > 73) {
-            finalProgrammingPercent = 4;
         } else if (markProgrammingPercent > 60) {
-            finalProgrammingPercent = 3;
+            gradeProgramming = 3;
         } else {
-            finalProgrammingPercent = 2;
+            gradeProgramming = 2;
         }
-            System.out.println("Программирование оценка " + finalProgrammingPercent);
-            System.out.println(("Средний балл оценок по предметам ") + 
-                    ((finalHistoryPercent + finalProgrammingPercent) / 2));
-            System.out.println(("Средний процент по предметам ") +
+        System.out.println("История оценка " + gradeHistory);
+        System.out.println("Программирование оценка " + gradeProgramming);
+        System.out.println(("Средний балл оценок по предметам ") + 
+                ((gradeHistory + gradeProgramming) / 2));
+        System.out.println(("Средний процент по предметам ") +
                     (((markHistoryPercent + markProgrammingPercent) / 2)));
 
         System.out.println("\n8 задача. Расчет прибыли за год");
@@ -150,29 +145,27 @@ public class IfElseStatementTheme {
         int totalWithdraw = 225;
         int checkSum = banknotes100 * 100 + banknotes10 * 10 + banknotes1 * 1;
         if (checkSum > totalWithdraw && totalWithdraw > 0) {
-        if (banknotes100 >= totalWithdraw / 100 && totalWithdraw >= 100) {
-        int sum100 = totalWithdraw / 100;
-            System.out.println(sum100 + " банкноты номиналом 100");
-        if (totalWithdraw - sum100 != 0) {
-        int sum10 = (totalWithdraw - sum100 * 100) / 10;
-            System.out.println(sum10 + " банкноты номиналом 10");
-        }
-        if (totalWithdraw - sum100 * 100 - (totalWithdraw - sum100 * 100) / 10 != 0) {
-        int sum1 = (totalWithdraw - sum100 * 100) % 10;
-            System.out.println(sum1 + " банкноты номиналом 1");
-        }
-        } else {
-        if (banknotes10 >= totalWithdraw / 10 && totalWithdraw >= 10) {
-        int sum10 = totalWithdraw / 10;
-            System.out.println(sum10 + " банкноты номиналом 10");
-        if (totalWithdraw - sum10 != 0) {
-        int sum1 = totalWithdraw % 10;
-            System.out.println(sum1);
-        }
-        } else {
-        int sum1 = totalWithdraw;
-        }
-        }
+            if (banknotes100 >= totalWithdraw / 100 && totalWithdraw >= 100) {
+                int sum100 = totalWithdraw / 100;
+                System.out.println(sum100 + " банкноты номиналом 100");
+                if (totalWithdraw - sum100 != 0) {
+                    int sum10 = (totalWithdraw - sum100 * 100) / 10;
+                    System.out.println(sum10 + " банкноты номиналом 10");
+                }
+                if (totalWithdraw - sum100 * 100 - (totalWithdraw - sum100 * 100) / 10 != 0) {
+                    int sum1 = (totalWithdraw - sum100 * 100) % 10;
+                    System.out.println(sum1 + " банкноты номиналом 1");
+                }
+            } else if (banknotes10 >= totalWithdraw / 10 && totalWithdraw >= 10) {
+                int sum10 = totalWithdraw / 10;
+                System.out.println(sum10 + " банкноты номиналом 10");
+                if (totalWithdraw - sum10 != 0) {
+                    int sum1 = totalWithdraw % 10;
+                    System.out.println(sum1);
+                } else {
+                int sum1 = totalWithdraw;
+                }
+            }
         } else {
             System.out.println("Текущая сумма доступна");
         }
