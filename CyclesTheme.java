@@ -2,17 +2,17 @@ public class CyclesTheme {
 
     public static void main (String[] args) {
         System.out.println("\n1. Подсчет суммы четных и нечетных чисел.");
-        byte beginNum = -10;
+        byte counter = -10;
         byte sumEven = 0;
         byte sumOdd = 0;
         do {
-            if (beginNum % 2 == 0) {
-                sumEven += beginNum;
+            if (counter % 2 == 0) {
+                sumEven += counter;
             } else {
-                sumOdd += beginNum;
+                sumOdd += counter;
             }
-            beginNum++;
-        } while (beginNum <= 21);
+            counter++;
+        } while (counter <= 21);
         System.out.println(("В промежутке [-10, 21] сумма четных чисел = ") +
                 (sumEven + ", а нечетных = " + sumOdd));
 
@@ -20,63 +20,63 @@ public class CyclesTheme {
         byte num1 = 10;
         byte num2 = 5;
         byte num3 = -1;
-        byte maxNumber = num1;
-        byte minNumber = num2;
+        byte max;
+        byte min;
         if (num1 > num2) {
-            maxNumber = num1;
-            minNumber = num2;
+            max = num1;
+            min = num2;
         } else {
-            maxNumber = num2;
-            minNumber = num1;
+            max = num2;
+            min = num1;
         }
-        if (num3 < minNumber) {
-            minNumber = num3;
-        } else if (num3 > maxNumber) {
-            maxNumber = num3;
+        if (num3 < min) {
+            min = num3;
+        } else if (num3 > max) {
+            max = num3;
         }
-        for (int i = maxNumber - 1; i > minNumber; i--) {
-            System.out.println(i + " ");
+        for (int i = max - 1; i > min; i--) {
+            System.out.printf(i + " ");
         }
 
         System.out.println("\n3. Вывод реверсивного числа и суммы его цифр");
         int anyNumber = 1234;
-        int sumAnyNumber = 0;
+        int sumDigits = 0;
         while (anyNumber > 0) {
-            int inverseNum = anyNumber % 10;
-            System.out.print(inverseNum);
-            sumAnyNumber += inverseNum;
+            int digit = anyNumber % 10;
+            System.out.print(digit);
+            sumDigits += digit;
             anyNumber /= 10;
         }
-        System.out.println("\nСумма его цифр " + sumAnyNumber);
+        System.out.println("\nСумма его цифр " + sumDigits);
 
         System.out.println("\nВывод чисел на консоль в несколько строк");
-        int numericalSeries = 0;
+        int numDigitsPerLines = 0;
         for (int i = 1; i < 24; i += 2) {
-            numericalSeries = numericalSeries + 1;
+            numDigitsPerLines++;
             System.out.printf("%3s", i);
-            if (numericalSeries == 5) {
+            if (numDigitsPerLines == 5) {
                 System.out.println();
-                numericalSeries = 0;
+                numDigitsPerLines = 0;
             }
         }
-        if (numericalSeries != 0) {
-            while (numericalSeries < 5) {
+        if (numDigitsPerLines != 0) {
+            while (numDigitsPerLines < 5) {
                 System.out.printf("%3s", 0);
-                numericalSeries++;
+                numDigitsPerLines++;
             }
         }
 
         System.out.println("\nЗадание 5. Проверка количества двоек на четность/нечетность \n");
         int num4 = 3242592;
-        int duplicateNum4 = num4;
-        int num4Two = 0;
-        while(duplicateNum4 > 0) {
-            if(duplicateNum4 % 10 == 2) {
-                num4Two++;
+        int copyNum4 = num4;
+        int numTwos = 0;
+        while(copyNum4 > 0) {
+            if(copyNum4 % 10 == 2) {
+                numTwos++;
             }
-            duplicateNum4 /= 10;
+            copyNum4 /= 10;
         }
-        System.out.println("Число " + num4 + " содержит" + (num4Two / 2 == 0 ? " четное" : " нечетное") + 
+        System.out.println("Число " + num4 + " содержит" + (numTwos / 2 == 0 ? " четное" : " нечетное") + 
                 " количество двоек");
 
         System.out.println("\n6.Отображение фигур в консоли\n");
