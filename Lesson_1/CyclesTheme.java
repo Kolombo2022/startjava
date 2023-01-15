@@ -142,13 +142,13 @@ public class CyclesTheme {
         int sumRightHalf = 0;
         int j = 0;
         while(num7 > 0) {
-            int dozensNum7 = num7 % 10;
+            int remainder = num7 % 10;
             num7 /= 10;
             j++;
             if(j <= 3) {
-                sumRightHalf = sumRightHalf + dozensNum7;
+                sumRightHalf = sumRightHalf + remainder;
             } else {
-                sumLeftHalf = sumLeftHalf + dozensNum7;
+                sumLeftHalf = sumLeftHalf + remainder;
             }
         }
         System.out.println("Сумма цифр LeftHalf = " + sumLeftHalf + " Сумма цифр RightHalf = " + sumRightHalf);
